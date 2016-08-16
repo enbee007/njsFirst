@@ -2,16 +2,7 @@ var express = require("express");
 var app = express();
 
 
-var middleware = {
-	authenticatiion : function(req,res,next){
-		console.log("private route");
-		next();
-	},
-	logger : function(req,res,next){
-		console.log("Request: "+req.method+" by url : "+req.originalUrl+" \ntime: "+new Date().toString());
-		next();
-	}
-};
+var middleware = require("./middleware.js");
 
 app.use(middleware.logger);
 app.use(express.static("./public"));
