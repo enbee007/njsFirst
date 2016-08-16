@@ -20,7 +20,7 @@ app.use(express.static("./public"));
 
 
 app.get("/about",middleware.authenticatiion,function(req,res){
-	res.send("ABOUT US!");
+	res.send("ABOUT US");
 });
 
 app.listen(3000,function(){
